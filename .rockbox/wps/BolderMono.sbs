@@ -1,0 +1,74 @@
+# SBS Theme Name: BolderMono
+# Author: Matthias Keysermann (keyser84@web.de)
+# Platform: Sony NWZ-E370/380 Series
+# Version: 0.6
+# Licence: CC-BY-SA 3.0
+# Based on LSE3 (for Sandisk Sansa Clip+) by Sergii Lisovyi
+# Last updated: Thu, 28th May 2015 19:35 (+0)
+
+
+
+# set default viewport
+%Vi(-,0,18,128,142,1)
+
+# load fonts
+%Fl(3,08-Rockfont.fnt,100)
+%Fl(4,08-Nedore.fnt,100)
+
+# preload images
+%xl(B,battery.bmp,0,0,6)
+%xl(S,stereo.bmp,0,0,2)
+%xl(R,repeatshuffle-small.bmp,0,0,6)
+%xl(P,play.bmp,0,0,6)
+
+
+
+# Conditional Viewport
+%?if(%mp, =, 0)<%Vd(a)> # Stop
+%?if(%mp, =, 1)<%Vd(a)> # Play
+%?if(%mp, =, 2)<%Vd(a)> # Pause
+%?if(%mp, =, 3)<%Vd(a)> # Ffwd
+%?if(%mp, =, 4)<%Vd(a)> # Rew
+%?if(%mp, =, 7)<%Vd(b)> # FM
+%?if(%mp, =, 8)<%Vd(b)> # FM pause
+
+
+
+# Battery
+%V(0,0,16,8,0)
+%?bp<%xd(Ba)|%?bl<%xd(Bb)|%xd(Bc)|%xd(Bd)|%xd(Be)|%xd(Bf)>>
+
+# Time
+%V(44,0,40,8,4)
+%ac%?St(time format)<%cH:%cM|%cl:%cM>
+
+# Repeat/Shuffle
+%Vl(a,101,0,17,8,0)
+%?mm<%?ps<%xd(Ra)>|%?ps<%xd(Rb)|%xd(Rc)>|%xd(Rd)|%?ps<%xd(Re)|%xd(Rc)>|%xd(Rf)>
+
+# Mono/Stereo
+%Vl(b,101,0,8,8,0)
+%?St(force fm mono)<%xd(Sa)|%?ts<%xd(Sb)|>>
+
+# Play/Pause
+%V(119,0,9,8,0)
+%?mh<%xd(Pf)|%?mp<%xd(Pa)|%xd(Pb)|%xd(Pc)|%xd(Pd)|%xd(Pe)>>
+
+
+
+# Battery Time
+%V(0,9,40,8,3)
+%al%bt
+#%al%bl%%
+
+# X of Y
+%Vl(a,44,9,40,8,3)
+%ac%pp/%pe
+
+# Scan/Preset
+%Vl(b,44,9,40,8,3)
+%?tm<%ac%?mh<%tf FM|> scan|%acpreset>
+
+# Volume
+%V(100,9,28,8,3)
+%ar%pvdB

@@ -1,0 +1,64 @@
+# WPS Theme Name: BolderMono
+# Author: Matthias Keysermann (keyser84@web.de)
+# Platform: Sony NWZ-E370/380 Series
+# Version: 0.6
+# Licence: CC-BY-SA 3.0
+# Based on LSE3 (for Sandisk Sansa Clip+) by Sergii Lisovyi
+# Last updated: Thu, 28th May 2015 19:35 (+0)
+
+
+
+# statusbar enabled
+%we
+
+# load fonts
+%Fl(3,08-Rockfont.fnt,100)
+%Fl(4,08-Nedore.fnt,100)
+
+
+
+# Conditional Viewport: Album Art/File Info
+%?C<%Vd(a)|%Vd(b)%Vd(c)%Vd(d)>
+
+# Album Art
+%Vl(a,0,18,128,100,1)
+%Cl(0,0,128,100)
+%Cd
+
+# File Info
+%Vl(b,0,38,128,90,4)
+%acFile Information
+%Vl(c,0,48,40,80,3)
+%arName:
+%arSize:
+%arCodec:
+%arBitrate:
+%arRate:
+%Vl(d,44,48,84,80,3)
+%s%fm
+%fs kB
+%fc
+%fb kbps %fv
+%ff Hz
+
+# Artist / Album (otherwise Directory)
+%V(0,118,128,16,1)
+%ac%s%?ia<%ia%?id< / %id>|%d(1)>
+
+# Title (otherwise Filename)
+%V(0,134,128,16,1)
+%ac%s%?it<%it|%fn>
+
+
+
+# Current Time
+%V(0,151,32,8,3)
+%ar%pc
+
+# Progress Bar
+%V(34,151,60,8,0)
+%pb
+
+# Total Time
+%V(96,151,32,8,3)
+%al%pt

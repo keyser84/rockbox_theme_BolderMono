@@ -1,0 +1,40 @@
+# FMS Theme Name: BolderMono
+# Author: Matthias Keysermann (keyser84@web.de)
+# Platform: Sony NWZ-E370/380 Series
+# Version: 0.6
+# Licence: CC-BY-SA 3.0
+# Based on LSE3 (for Sandisk Sansa Clip+) by Sergii Lisovyi
+# Last updated: Thu, 28th May 2015 19:35 (+0)
+
+
+
+# statusbar enabled
+%we
+
+# load fonts
+%Fl(3,08-Rockfont.fnt,100)
+%Fl(4,08-Nedore.fnt,100)
+
+
+
+# Preset Name
+%V(0,118,128,16,1)
+%ac%s%Tn
+
+# Current Frequency
+%V(0,134,128,16,1)
+%ac%tf
+
+
+
+# Minimum Frequency
+%V(0,151,32,8,3)
+%ar%ta
+
+# Progress Bar
+%V(34,151,60,8,0)
+%pb
+
+# Maximum Frequency
+%V(96,151,32,8,3)
+%tb
