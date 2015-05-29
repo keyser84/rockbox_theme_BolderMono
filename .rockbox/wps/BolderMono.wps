@@ -1,10 +1,10 @@
 # WPS Theme Name: BolderMono
 # Author: Matthias Keysermann (keyser84@web.de)
 # Platform: Sony NWZ-E370/380 Series
-# Version: 0.6
+# Version: 0.7
 # Licence: CC-BY-SA 3.0
 # Based on LSE3 (for Sandisk Sansa Clip+) by Sergii Lisovyi
-# Last updated: Thu, 28th May 2015 19:35 (+0)
+# Last updated: Thu, 29th May 2015 09:55 (+0)
 
 
 
@@ -12,6 +12,7 @@
 %we
 
 # load fonts
+%Fl(2,16-Adobe-Helvetica-Bold.fnt,100)
 %Fl(3,08-Rockfont.fnt,100)
 %Fl(4,08-Nedore.fnt,100)
 
@@ -42,11 +43,11 @@
 %ff Hz
 
 # Artist / Album (otherwise Directory)
-%V(0,118,128,16,1)
+%V(0,118,128,14,1)
 %ac%s%?ia<%ia%?id< / %id>|%d(1)>
 
 # Title (otherwise Filename)
-%V(0,134,128,16,1)
+%V(0,132,128,16,2)
 %ac%s%?it<%it|%fn>
 
 
